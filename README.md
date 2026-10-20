@@ -1,1 +1,1 @@
-# Cloudflare-wp-onlyno999
+复制粘贴，等待安装就行了。
