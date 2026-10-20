@@ -1,18 +1,259 @@
-import { connect as 连接 } from 'cloudflare:sockets';
+let 変換='vl', 変換貳='ess', 標識='://';
+import { connect as 接続 } from 'cloudflare:sockets';
+let 識別子='d342d11e-d424-4583-b36e-524ab1f0afa4';
+let 代理網='wok.woxxxxxx.nyc.mn';
+let 代理端=443;
+let 優選址='https://bestcf.pages.dev/wetest/ipv4.txt,https://raw.githubusercontent.com/Senflare/Senflare-IP/refs/heads/main/Senflare-Pro.txt';
 
-// ============================ 配置区（改这里就能用） ============================
-// 认证令牌：即连接用的 UUID。生成方式：Windows 下执行 Powershell -Command "[guid]::NewGuid()"
-let 认证令牌 = '2541f8d4-d157-46af-9169-0025bf435fbc';
-// 回退地址：直连失败时改走的地址，留空表示不启用
-let 回退地址 = 'wok.woxxxxxx.nyc.mn';
-// 中转地址：经由中转服务器出站。格式 user:pass@host:port 或 host:port，留空表示不启用
-// 用户名与密码不要包含特殊字符；一旦设置，就会忽略回退地址
-let 中转地址 = '';
-// 优选地址：连接用的 CF 优选 IP 或域名，握手仍用访问域名。逗号隔开多个。
-// 每一项可以是 host:port（如 104.16.0.1:443），也可以是一个在线列表的 URL
-// （如 https://bestcf.pages.dev/vps789/top10.txt，会把里面的地址全拉进来）。
-// URL 和 host:port 可以混着填，留空就只用访问域名本身。
-let 优选地址 = 'https://bestcf.pages.dev/wetest/ipv4.txt,https://raw.githubusercontent.com/Senflare/Senflare-IP/refs/heads/main/Senflare-Pro.txt';
-// ============================================================================
+async function 偽裝頁() {
+  return new Response('Hello World!', { status: 200, headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
+}
 
-const a0E=a0b;(function(a,b){const C=a0b,c=a();while(!![]){try{const d=parseInt(C(0x17e))/0x1+parseInt(C(0x17d))/0x2*(parseInt(C(0x1b5))/0x3)+-parseInt(C(0x19f))/0x4*(parseInt(C(0x1bd))/0x5)+parseInt(C(0x1a1))/0x6*(parseInt(C(0x1bc))/0x7)+parseInt(C(0x16e))/0x8+parseInt(C(0x187))/0x9+-parseInt(C(0x184))/0xa*(parseInt(C(0x16f))/0xb);if(d===b)break;else c['push'](c['shift']());}catch(f){c['push'](c['shift']());}}}(a0a,0x7d4f6));const a0c=new TextDecoder();function a0d(a){const D=a0b,b=atob(a),c=new Uint8Array(b[D(0x1aa)]);for(let d=0x0;d<b[D(0x1aa)];d++)c[d]=b[D(0x1b2)](d);return a0c[D(0x165)](c);}if(!a0n(认证令牌))throw new Error(a0E(0x167));let a0f={},a0g=![];if(中转地址)try{a0f=a0w(中转地址),a0g=!![];}catch(a0z){let a0A=a0z;console['log'](a0A[a0E(0x1c7)]()),a0g=![];}export default{async 'fetch'(a){const F=a0E;try{const b=a[F(0x162)]['get'](F(0x19a));if(!b||b!==F(0x180)){const c=new URL(a['url']);switch(c[F(0x178)]){case'/':return new Response(F(0x1b7),{'status':0xc8});case'/'+认证令牌:{const d=await a0y(认证令牌,a[F(0x162)][F(0x18c)](F(0x197)));return new Response(''+d,{'status':0xc8,'headers':{'Content-Type':F(0x18f)}});}default:return new Response(F(0x1ac),{'status':0x194});}}else return await a0h(a);}catch(f){let g=f;return new Response(g[F(0x1c7)]());}}};async function a0h(a){const G=a0E,b=new WebSocketPair(),[c,d]=Object[G(0x1a4)](b);d['accept']();let f='',g='';const h=(m,n)=>{const H=G;console[H(0x1a8)]('['+f+':'+g+']\x20'+m,n||'');},i=a[G(0x162)][G(0x18c)](G(0x1c9))||'',j=a0j(d,i,h);let k={'value':null},l=![];return j[G(0x18d)](new WritableStream({async 'write'(m,n){const I=G;if(l)return await a0u(m,d,null,h);if(k[I(0x175)]){const v=k[I(0x175)][I(0x1a2)][I(0x173)]();await v['write'](m),v[I(0x192)]();return;}const {出错:o,消息:p,地址类型:q,目标端口:目标端口=0x1bb,目标地址:目标地址='',首包偏移:r,协议版本:协议版本=new Uint8Array([0x0,0x0]),是数据报:s}=a0k(m,认证令牌);f=目标地址,g=目标端口+'--'+Math['random']()+'\x20'+(s?I(0x181):I(0x1bb))+'\x20';if(o){throw new Error(p);return;}if(s){if(目标端口===0x35)l=!![];else{throw new Error(I(0x1b0));return;}}const t=new Uint8Array([协议版本[0x0],0x0]),u=m[I(0x1d0)](r);if(l)return a0u(u,d,t,h);a0i(k,q,目标地址,目标端口,u,d,t,h);},'close'(){const J=G;h(J(0x1a9));},'abort'(m){const K=G;h(K(0x183),JSON['stringify'](m));}}))[G(0x1b1)](m=>{const L=G;h(L(0x1bf),m);}),new Response(null,{'status':0x65,'webSocket':c});}async function a0i(a,b,c,d,f,g,h,i){async function j(m,n,o=![]){const M=a0b,p=o?await a0v(b,m,n,i):连接({'hostname':m,'port':n});a['value']=p,i(M(0x17b)+m+':'+n);const q=p[M(0x1a2)][M(0x173)]();return await q[M(0x1a7)](f),q['releaseLock'](),p;}async function k(){const N=a0b;a0g?l=await j(c,d,!![]):l=await j(回退地址||c,d),l[N(0x1c5)][N(0x1b1)](m=>{const O=N;console[O(0x1a8)]('重试传输套接字关闭出错',m);})[N(0x17f)](()=>{a0q(g);}),a0l(l,g,h,null,i);}let l=await j(c,d);a0l(l,g,h,k,i);}function a0j(a,b,c){let d=![];const f=new ReadableStream({'start'(g){const P=a0b;a[P(0x193)]('message',j=>{const Q=P;if(d)return;const k=j[Q(0x1b6)];g['enqueue'](k);}),a[P(0x193)](P(0x18a),()=>{a0q(a);if(d)return;g['close']();}),a['addEventListener'](P(0x16b),j=>{const R=P;c(R(0x186)),g[R(0x16b)](j);});const {前置数据:h,error:i}=a0m(b);if(i)g[P(0x16b)](i);else h&&g[P(0x1a3)](h);},'pull'(g){},'cancel'(g){const S=a0b;if(d)return;c(S(0x164)+g),d=!![],a0q(a);}});return f;}function a0k(a,b){const T=a0E;if(a[T(0x171)]<0x18)return{'出错':!![],'消息':T(0x179)};const c=new Uint8Array(a[T(0x1d0)](0x0,0x1));let d=![],f=![];a0t(new Uint8Array(a['slice'](0x1,0x11)))===b&&(d=!![]);if(!d)return{'出错':!![],'消息':T(0x1a5)};const g=new Uint8Array(a[T(0x1d0)](0x11,0x12))[0x0],h=new Uint8Array(a[T(0x1d0)](0x12+g,0x12+g+0x1))[0x0];if(h===0x1){}else{if(h===0x2)f=!![];else return{'出错':!![],'消息':T(0x195)+h+T(0x1cc)};}const i=0x12+g+0x1,j=a[T(0x1d0)](i,i+0x2),k=new DataView(j)[T(0x170)](0x0);let l=i+0x2;const m=new Uint8Array(a['slice'](l,l+0x1)),n=m[0x0];let o=0x0,p=l+0x1,q='';switch(n){case 0x1:o=0x4,q=new Uint8Array(a['slice'](p,p+o))[T(0x169)]('.');break;case 0x2:o=new Uint8Array(a[T(0x1d0)](p,p+0x1))[0x0],p+=0x1,q=new TextDecoder()[T(0x165)](a[T(0x1d0)](p,p+o));break;case 0x3:o=0x10;const r=new DataView(a[T(0x1d0)](p,p+o)),s=[];for(let t=0x0;t<0x8;t++){s[T(0x163)](r['getUint16'](t*0x2)['toString'](0x10));}q=s[T(0x169)](':');break;default:return{'出错':!![],'消息':T(0x198)+n};}if(!q)return{'出错':!![],'消息':'地址为空，地址类型是\x20'+n};return{'出错':![],'目标地址':q,'地址类型':n,'目标端口':k,'首包偏移':p+o,'协议版本':c,'是数据报':f};}async function a0l(a,b,c,d,f){const U=a0E;let g=0x0,h=[],i=c,j=![];await a[U(0x188)][U(0x18d)](new WritableStream({'start'(){},async 'write'(k,l){const V=U;j=!![],b[V(0x1af)]!==a0o&&l[V(0x16b)](V(0x19b)),i?(b[V(0x166)](await new Blob([i,k])[V(0x19e)]()),i=null):b[V(0x166)](k);},'close'(){const W=U;f(W(0x1cf)+j);},'abort'(k){const X=U;console[X(0x16b)](X(0x1be),k);}}))['catch'](k=>{const Y=U;console[Y(0x16b)](Y(0x1b3),k[Y(0x16a)]||k),a0q(b);}),j===![]&&d&&(f('重试'),d());}function a0m(a){const Z=a0E;if(!a)return{'error':null};try{a=a[Z(0x1a0)](/-/g,'+')[Z(0x1a0)](/_/g,'/');const b=atob(a),c=Uint8Array[Z(0x199)](b,d=>d[Z(0x1b2)](0x0));return{'前置数据':c[Z(0x1ba)],'error':null};}catch(d){return{'error':d};}}function a0n(a){const a0=a0E,b=/^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;return b[a0(0x17c)](a);}const a0o=0x1,a0p=0x2;function a0b(a,b){a=a-0x162;const c=a0a();let d=c[a];return d;}function a0q(a){const a1=a0E;try{(a[a1(0x1af)]===a0o||a[a1(0x1af)]===a0p)&&a['close']();}catch(b){console[a1(0x16b)](a1(0x1c0),b);}}const a0r=[];for(let a0B=0x0;a0B<0x100;++a0B){a0r[a0E(0x163)]((a0B+0x100)[a0E(0x1c7)](0x10)[a0E(0x1d0)](0x1));}function a0s(a,b=0x0){const a2=a0E;return(a0r[a[b+0x0]]+a0r[a[b+0x1]]+a0r[a[b+0x2]]+a0r[a[b+0x3]]+'-'+a0r[a[b+0x4]]+a0r[a[b+0x5]]+'-'+a0r[a[b+0x6]]+a0r[a[b+0x7]]+'-'+a0r[a[b+0x8]]+a0r[a[b+0x9]]+'-'+a0r[a[b+0xa]]+a0r[a[b+0xb]]+a0r[a[b+0xc]]+a0r[a[b+0xd]]+a0r[a[b+0xe]]+a0r[a[b+0xf]])[a2(0x16c)]();}function a0t(a,b=0x0){const a3=a0E,c=a0s(a,b);if(!a0n(c))throw TypeError(a3(0x185));return c;}async function a0u(a,b,c,d){const a4=a0E;try{const f=a4(0x189),g=0x35;let h=c;const i=连接({'hostname':f,'port':g});d(a4(0x17b)+f+':'+g);const j=i['writable'][a4(0x173)]();await j[a4(0x1a7)](a),j[a4(0x192)](),await i[a4(0x188)][a4(0x18d)](new WritableStream({async 'write'(k){const a5=a4;b[a5(0x1af)]===a0o&&(h?(b[a5(0x166)](await new Blob([h,k])[a5(0x19e)]()),h=null):b[a5(0x166)](k));},'close'(){const a6=a4;d(a6(0x1ca)+f+a6(0x1b8));},'abort'(k){const a7=a4;console['error'](a7(0x1ca)+f+a7(0x194),k);}}));}catch(k){console[a4(0x16b)](a4(0x1c4)+k[a4(0x1cd)]);}}async function a0v(a,b,c,d){const a8=a0E,{用户名:f,密码:g,主机名:h,端口:i}=a0f,j=连接({'hostname':h,'port':i}),k=new Uint8Array([0x5,0x2,0x0,0x2]),l=j[a8(0x1a2)][a8(0x173)]();await l[a8(0x1a7)](k),d(a8(0x1ce));const m=j[a8(0x188)]['getReader'](),n=new TextEncoder();let o=(await m[a8(0x18e)]())[a8(0x175)];if(o[0x0]!==0x5){d('中转服务器版本错误：'+o[0x0]+a8(0x191));return;}if(o[0x1]===0xff){d(a8(0x18b));return;}if(o[0x1]===0x2){d('中转服务器需要认证');if(!f||!g){d('请提供用户名/密码');return;}const r=new Uint8Array([0x1,f['length'],...n[a8(0x16d)](f),g[a8(0x1aa)],...n[a8(0x16d)](g)]);await l[a8(0x1a7)](r),o=(await m[a8(0x18e)]())[a8(0x175)];if(o[0x0]!==0x1||o[0x1]!==0x0){d(a8(0x1ad));return;}}let p;switch(a){case 0x1:p=new Uint8Array([0x1,...b[a8(0x1b9)]('.')[a8(0x1c1)](Number)]);break;case 0x2:p=new Uint8Array([0x3,b['length'],...n['encode'](b)]);break;case 0x3:p=new Uint8Array([0x4,...b[a8(0x1b9)](':')['flatMap'](s=>[parseInt(s['slice'](0x0,0x2),0x10),parseInt(s[a8(0x1d0)](0x2),0x10)])]);break;default:d(a8(0x198)+a);return;}const q=new Uint8Array([0x5,0x1,0x0,...p,c>>0x8,c&0xff]);await l[a8(0x1a7)](q),d(a8(0x1a6)),o=(await m[a8(0x18e)]())[a8(0x175)];if(o[0x1]===0x0)d(a8(0x168));else{d('中转连接建立失败');return;}return l[a8(0x192)](),m['releaseLock'](),j;}function a0a(){const ae=['writable','enqueue','values','令牌无效','已发送连接请求','write','log','可读套接字流已关闭','length','&type=ws&host=','Not\x20found','中转服务器认证失败','filter','readyState','数据报仅支持\x2053\x20端口（域名解析）','catch','charCodeAt','远端回传套接字异常\x20','reverse','3MksUkT','data','hello',')连接已关闭','split','buffer','tcp\x20','329oCZJlD','5hIubpY','远端可读流已中止','可读套接字流\x20pipeTo\x20出错','安全关闭套接字出错','map','中转地址格式不合法','dmxlc3M=','处理域名解析异常，错误：','closed','&path=%2F%3Fed%3D2048','toString','trim','sec-websocket-protocol','解析服务器(','443','\x20不支持，仅支持\x2001-传输\x20/\x2002-数据报\x20/\x2003-多路复用','message','已发送握手问候','远端可读流已关闭，是否有回传数据：','slice','headers','push','可读流被取消，原因：','decode','send','令牌格式不合法','中转连接已建立','join','stack','error','toLowerCase','encode','7599376foFlIJ','22XUwybJ','getUint16','byteLength','security=tls&sni=','getWriter','pop','value','match','has','pathname','数据不合法','includes','已连接\x20','test','630978thMdle','826512nxYwac','finally','websocket','udp\x20','text','可读套接字流已中止','6609830MopFLR','还原出的令牌不合法','套接字服务端出错','980568icvVhX','readable','8.8.4.4','close','没有可接受的认证方法','get','pipeTo','read','text/plain;charset=utf-8','add','，期望：5','releaseLock','addEventListener',')连接已中止','命令\x20','?encryption=none&','Host','地址类型不合法：','from','Upgrade','套接字状态不是打开，可能已关闭','&fp=chrome','://','arrayBuffer','3844328hEYYHw','replace','76014QAleQd'];a0a=function(){return ae;};return a0a();}function a0w(a){const a9=a0E;let [b,c]=a[a9(0x1b9)]('@')[a9(0x1b4)](),d,f,g,h;if(c){const k=c[a9(0x1b9)](':');if(k[a9(0x1aa)]!==0x2)throw new Error('中转地址格式不合法');[d,f]=k;}const i=b[a9(0x1b9)](':');h=Number(i[a9(0x174)]());if(isNaN(h))throw new Error(a9(0x1c2));g=i['join'](':');const j=/^\[.*\]$/;if(g['includes'](':')&&!j[a9(0x17c)](g))throw new Error(a9(0x1c2));return{'用户名':d,'密码':f,'主机名':g,'端口':h};}async function a0x(a){const ab=a0E,b=[],c=new Set(),d=g=>{const aa=a0b,h=(g||'')[aa(0x1c8)]();if(!h)return;const i=h['split']('#'),j=i[aa(0x1aa)]>0x1?i[aa(0x1d0)](0x1)[aa(0x169)]('#')[aa(0x1c8)]():'',k=i[0x0][aa(0x1c8)]();if(!k)return;let l,m;const n=k[aa(0x176)](/^\[(.+)\]:(\d+)$/);if(n)l=n[0x1],m=n[0x2];else k['includes'](':')&&k[aa(0x1b9)](':')[aa(0x1aa)]===0x2?[l,m]=k['split'](':'):(l=k,m=aa(0x1cb));l=(l||'')[aa(0x1c8)](),m=(m||'443')[aa(0x1c8)]();if(!l)return;const o=l+':'+m;if(c[aa(0x177)](o))return;c[aa(0x190)](o),b[aa(0x163)]({'地址':l,'端口':m,'备注':j||o});},f=(优选地址||'')[ab(0x1b9)](/[,，]/)[ab(0x1c1)](g=>g[ab(0x1c8)]())[ab(0x1ae)](g=>g);for(const g of f){if(/^https?:\/\//i[ab(0x17c)](g))try{const h=await fetch(g,{'cf':{'cacheTtl':0x12c}});if(h['ok']){const i=await h[ab(0x182)]();for(const j of i['split']('\x0a'))d(j);}}catch(k){}else d(g);}if(b[ab(0x1aa)]===0x0&&a)d(a);return b;}async function a0y(a,b){const ac=a0E,c=a0d(ac(0x1c3)),d=b||'',f=[0x50,0x1f90,0x22b0,0x804,0x822,0x826,0x82f],g=await a0x(d),h=g[ac(0x1c1)](i=>{const ad=ac,j=i['地址'][ad(0x17a)](':')?'['+i['地址']+']':i['地址'],k=f['includes'](Number(i['端口'])),l=k?'security=none':ad(0x172)+d+ad(0x19c);return c+ad(0x19d)+a+'@'+j+':'+i['端口']+(ad(0x196)+l+ad(0x1ab)+d+ad(0x1c6))+('#'+encodeURIComponent(i['备注']));});return btoa(h[ac(0x169)]('\x0a'));}
+const 知能網 = ['openai.com','chatgpt.com','oaistatic.com','oaiusercontent.com','anthropic.com','claude.ai','gemini.google.com','generativelanguage.googleapis.com','ai.google.dev','x.ai','grok.com','copilot.microsoft.com','sydney.bing.com','perplexity.ai','poe.com'];
+
+function 判定知能(領域) {
+  if (!領域 || typeof 領域 !== 'string') return false;
+  const 下 = 領域.toLowerCase();
+  return 知能網.some(鍵 => 下.includes(鍵));
+}
+
+async function 解析六(領域) {
+  if (!領域 || /^(?:\d{1,3}\.){3}\d{1,3}$/.test(領域) || 領域.includes(':')) return 領域;
+  try {
+    const 答 = await fetch(`https://1.1.1.1/dns-query?name=${encodeURIComponent(領域)}&type=AAAA`, { headers: { 'accept': 'application/dns-json' }, cf: { cacheTtl: 300 } });
+    if (!答.ok) return 領域;
+    const 據 = await 答.json();
+    const 錄 = 據.Answer?.filter(甲 => 甲.type === 28);
+    if (錄 && 錄.length > 0) {
+      const 址 = 錄[Math.floor(Math.random() * 錄.length)].data;
+      return 址.startsWith('[') ? 址 : `[${址}]`;
+    }
+  } catch (錯) {}
+  return 領域;
+}
+
+if (!確認標識(識別子)) throw new Error('uuid is not valid');
+
+export default {
+  async fetch(求, 境, 脈) {
+    try {
+      識別子 = 境.UUID || 識別子;
+      if (境.PROXYIP) 代理網 = 境.PROXYIP.trim();
+      let 隱 = false, 嘲 = "哎呀你找到了我，但是我就是不给你看，气不气，嘿嘿嘿"; 
+      if (境.HIDE !== undefined) 隱 = 境.HIDE === 'true';
+      else if (境.HIDE_SUBSCRIPTION !== undefined) 隱 = 境.HIDE_SUBSCRIPTION === 'true';
+      else if (境.隐藏 !== undefined) 隱 = 境.隐藏 === 'true';
+      if (境.SARCASM_MESSAGE !== undefined) 嘲 = 境.SARCASM_MESSAGE;
+      else if (境.嘲讽语 !== undefined) 嘲 = 境.嘲讽语;
+
+      const 昇 = 求.headers.get('Upgrade');
+      if (!昇 || 昇 !== 'websocket') {
+        const 址 = new URL(求.url);
+        switch (址.pathname) {
+          case '/': return 偽裝頁(); 
+          case `/${識別子}`: {
+            if (隱) return new Response(嘲, { status: 200, headers: { "Content-Type": "text/plain;charset=utf-8" } });
+            else return new Response(`${await 取配(識別子, 求.headers.get('Host'))}`, { status: 200, headers: { "Content-Type": "text/plain;charset=utf-8" } });
+          }
+          default:
+            if (址.pathname.startsWith('/proxyip=')) {
+              try {
+                const 時 = decodeURIComponent(址.pathname.substring(9)).trim();
+                if (時) { 代理網 = 時; return new Response(`臨時成功切換: ${代理網}\n`, { headers: { 'Content-Type': 'text/plain; charset=utf-8' } }); }
+              } catch (錯) {}
+            }
+            return new Response('Not found', { status: 404 });
+        }
+      } else {
+        const 址 = new URL(求.url);
+        let 徑 = null;
+        if (址.pathname.startsWith('/proxyip=')) try { 徑 = decodeURIComponent(址.pathname.substring(9)).trim(); } catch (錯) {}
+        return await 協定處理(求, 徑 || 址.searchParams.get('proxyip') || 代理網);
+      }
+    } catch (錯) { return new Response(錯.toString()); }
+  },
+};
+
+function 析址(串) {
+    if (!串) return null;
+    串 = 串.trim();
+    if (串.startsWith('socks://') || 串.startsWith('socks5://')) {
+        try {
+            const 址 = new URL(串.replace(/^socks:\/\//, 'socks5://'));
+            return { type: 'socks5', host: 址.hostname, port: parseInt(址.port) || 1080, username: 址.username ? decodeURIComponent(址.username) : '', password: 址.password ? decodeURIComponent(址.password) : '' };
+        } catch (錯) { return null; }
+    }
+    if (串.startsWith('http://') || 串.startsWith('https://')) {
+        try {
+            const 址 = new URL(串);
+            return { type: 'http', host: 址.hostname, port: parseInt(址.port) || (串.startsWith('https://') ? 443 : 80), username: 址.username ? decodeURIComponent(址.username) : '', password: 址.password ? decodeURIComponent(址.password) : '' };
+        } catch (錯) { return null; }
+    }
+    if (串.startsWith('[')) {
+        const 括 = 串.indexOf(']');
+        if (括 > 0) {
+            const 機 = 串.substring(1, 括), 餘 = 串.substring(括 + 1);
+            if (餘.startsWith(':')) { const 端 = parseInt(餘.substring(1), 10); if (!isNaN(端) && 端 > 0 && 端 <= 65535) return { type: 'direct', host: 機, port: 端 }; }
+            return { type: 'direct', host: 機, port: 443 };
+        }
+    }
+    const 冒 = 串.lastIndexOf(':');
+    if (冒 > 0) {
+        const 機 = 串.substring(0, 冒), 端 = parseInt(串.substring(冒 + 1), 10);
+        if (!isNaN(端) && 端 > 0 && 端 <= 65535) return { type: 'direct', host: 機, port: 端 };
+    }
+    return { type: 'direct', host: 串, port: 443 };
+}
+
+async function 接靴下(配, 機, 端, 始) {
+    const { host: 宿, port: 門, username: 名, password: 密 } = 配, 網 = 接続({ hostname: 宿, port: 門 }), 寫 = 網.writable.getWriter(), 讀 = 網.readable.getReader();
+    try {
+        await 寫.write(名 && 密 ? new Uint8Array([0x05, 0x02, 0x00, 0x02]) : new Uint8Array([0x05, 0x01, 0x00]));
+        const 答 = await 讀.read();
+        if (答.done || 答.value.byteLength < 2) throw new Error('S5敗');
+        const 法 = new Uint8Array(答.value)[1];
+        if (法 === 0x02) {
+            const 名元 = new TextEncoder().encode(名), 密元 = new TextEncoder().encode(密), 認 = new Uint8Array(3 + 名元.length + 密元.length);
+            認[0] = 0x01; 認[1] = 名元.length; 認.set(名元, 2); 認[2 + 名元.length] = 密元.length; 認.set(密元, 3 + 名元.length);
+            await 寫.write(認);
+            const 認答 = await 讀.read();
+            if (認答.done || new Uint8Array(認答.value)[1] !== 0x00) throw new Error('S5認敗');
+        }
+        const 機元 = new TextEncoder().encode(機), 連 = new Uint8Array(7 + 機元.length);
+        連[0] = 0x05; 連[1] = 0x01; 連[2] = 0x00; 連[3] = 0x03; 連[4] = 機元.length; 連.set(機元, 5); new DataView(連.buffer).setUint16(5 + 機元.length, 端, false);
+        await 寫.write(連);
+        const 連答 = await 讀.read();
+        if (連答.done || new Uint8Array(連答.value)[1] !== 0x00) throw new Error('S5連敗');
+        await 寫.write(始); 寫.releaseLock(); 讀.releaseLock(); return 網;
+    } catch (錯) { 寫.releaseLock(); 讀.releaseLock(); 網.close(); throw 錯; }
+}
+
+async function 接網頁(配, 機, 端, 始) {
+    const { host: 宿, port: 門, username: 名, password: 密 } = 配, 網 = 接続({ hostname: 宿, port: 門 }), 寫 = 網.writable.getWriter(), 讀 = 網.readable.getReader();
+    try {
+        let 求 = `CONNECT ${機}:${端} HTTP/1.1\r\nHost: ${機}:${端}\r\n`;
+        if (名 && 密) 求 += `Proxy-Authorization: Basic ${btoa(`${名}:${密}`)}\r\n`;
+        await 寫.write(new TextEncoder().encode(求 + `User-Agent: Mozilla/5.0\r\nConnection: keep-alive\r\n\r\n`));
+        let 衝 = new Uint8Array(0), 頭 = -1;
+        while (頭 === -1 && 衝.length < 8192) {
+            const { done: 完, value: 值 } = await 讀.read();
+            if (完) throw new Error('斷');
+            const 新 = new Uint8Array(衝.length + 值.length); 新.set(衝); 新.set(值, 衝.length); 衝 = 新;
+            for (let i = 0; i < 衝.length - 3; i++) if (衝[i] === 0x0d && 衝[i + 1] === 0x0a && 衝[i + 2] === 0x0d && 衝[i + 3] === 0x0a) { 頭 = i + 4; break; }
+        }
+        const 態 = parseInt(new TextDecoder().decode(衝.slice(0, 頭)).split('\r\n')[0].match(/HTTP\/\d\.\d\s+(\d+)/)?.[1] || '0');
+        if (態 < 200 || 態 >= 300) throw new Error('HTTP敗');
+        await 寫.write(始); 寫.releaseLock(); 讀.releaseLock(); return 網;
+    } catch (錯) { try{寫.releaseLock();}catch(e){} try{讀.releaseLock();}catch(e){} 網.close(); throw 錯; }
+}
+
+async function 協定處理(求, 運配) {
+	const 雙 = new WebSocketPair(), 客 = 雙[0], 伺 = 雙[1]; 伺.accept();
+	let 殼 = { value: null }, 查 = false;
+	造流(伺, 求.headers.get('sec-websocket-protocol') || '').pipeTo(new WritableStream({
+		async write(塊) {
+			if (查) return await 解名(塊, 伺, null);
+			if (殼.value) { const 寫 = 殼.value.writable.getWriter(); await 寫.write(塊); 寫.releaseLock(); return; }
+			const { 錯, 息, 類, 端, 址, 引, 本, Ｕ } = 處頭(塊, 識別子);
+			if (錯) { 關(伺); throw new Error(息); }
+			if (Ｕ) { if (端 === 53) 查 = true; else { 關(伺); throw new Error('UDP僅DNS'); } }
+			const 回 = new Uint8Array([本[0], 0]), 始 = 塊.slice(引);
+			if (查) return 解名(始, 伺, 回);
+			await 處出(殼, 類, 址, 端, 始, 伺, 回, 運配);
+		}
+	})).catch(() => {});
+	return new Response(null, { status: 101, webSocket: 客 });
+}
+
+async function 處出(殼, 類, 址, 端, 始, 伺, 回, 運配) {
+	async function 直(地, 門, 據) {
+		const 宿 = 類 === 2 && 判定知能(地) ? await 解析六(地) : 地, 網 = 接続({ hostname: 宿, port: 門 });
+		殼.value = 網; const 寫 = 網.writable.getWriter(); await 寫.write(據); 寫.releaseLock(); return 網;
+	}
+	async function 轉(配, 據) {
+		const 網 = 配.type === 'socks5' ? await 接靴下(配, 址, 端, 據) : (配.type === 'http' || 配.type === 'https' ? await 接網頁(配, 址, 端, 據) : await 直(配.host, 配.port, 據));
+		殼.value = 網; return 網;
+	}
+	const 析 = 析址(運配), 強 = 析 && (析.type === 'socks5' || 析.type === 'http');
+	async function 退() {
+		try {
+			const 備 = 強 ? await 直(址, 端, 始) : (析 ? await 轉(析, 始) : null);
+			if (備) { 備.closed.catch(()=>{}).finally(()=>關(伺)); 連流(備, 伺, 回, null); }
+		} catch (錯) { 關(伺); }
+	}
+	try {
+		const 網 = 強 ? await 轉(析, 始) : await 直(址, 端, 始);
+		網.closed.catch(()=>{}).finally(()=>關(伺)); 連流(網, 伺, 回, 退);
+	} catch (錯) { await 退(); }
+}
+
+function 造流(伺, 早) {
+	let 銷 = false;
+	return new ReadableStream({
+		start(控) {
+			伺.addEventListener('message', (事) => { if (!銷) 控.enqueue(事.data); });
+			伺.addEventListener('close', () => { 關(伺); if (!銷) 控.close(); });
+			伺.addEventListener('error', (錯) => 控.error(錯));
+			const { 早據, 錯 } = 解基(早); if (錯) 控.error(錯); else if (早據) 控.enqueue(早據);
+		},
+		cancel() { 銷 = true; 關(伺); }
+	});
+}
+
+function 處頭(衝, 識) {
+	if (衝.byteLength < 24) return { 錯: true, 息: '無效' };
+	const 本 = new Uint8Array(衝.slice(0, 1)), 命 = new Uint8Array(衝.slice(18 + new Uint8Array(衝.slice(17, 18))[0], 18 + new Uint8Array(衝.slice(17, 18))[0] + 1))[0];
+	if (字化(new Uint8Array(衝.slice(1, 17))) !== 識) return { 錯: true, 息: '非用' };
+	const 引 = 18 + new Uint8Array(衝.slice(17, 18))[0] + 1, 端 = new DataView(衝.slice(引, 引 + 2)).getUint16(0), 類 = new Uint8Array(衝.slice(引 + 2, 引 + 3))[0];
+	let 長 = 0, 值引 = 引 + 3, 值 = '';
+	if (類 === 1) { 長 = 4; 值 = new Uint8Array(衝.slice(值引, 值引 + 長)).join('.'); }
+	else if (類 === 2) { 長 = new Uint8Array(衝.slice(值引, 值引 + 1))[0]; 值引++; 值 = new TextDecoder().decode(衝.slice(值引, 值引 + 長)); }
+	else if (類 === 3) { 長 = 16; const 視 = new DataView(衝.slice(值引, 值引 + 長)), 六 = []; for (let i = 0; i < 8; i++) 六.push(視.getUint16(i * 2).toString(16)); 值 = 六.join(':'); }
+	return { 錯: false, 址: 值, 類, 端, 引: 值引 + 長, 本, Ｕ: 命 === 2 };
+}
+
+async function 連流(遠, 伺, 回, 試) {
+	let 頭 = 回, 入 = false;
+	await 遠.readable.pipeTo(new WritableStream({
+		async write(塊) { 入 = true; if (頭) { 伺.send(await new Blob([頭, 塊]).arrayBuffer()); 頭 = null; } else 伺.send(塊); }
+	})).catch(() => 關(伺));
+	if (!入 && 試) 試();
+}
+
+function 解基(串) { try { return { 早據: Uint8Array.from(atob(串.replace(/-/g, '+').replace(/_/g, '/')), 符 => 符.charCodeAt(0)).buffer, 錯: null }; } catch (錯) { return { 錯 }; } }
+function 確認標識(識) { return /^[0-9a-f]{8}-[0-9a-f]{4}-[4][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(識); }
+function 關(網) { try { if (網.readyState === 1 || 網.readyState === 2) 網.close(); } catch (錯) {} }
+const 轉十 = Array.from({ length: 256 }, (_, i) => (i + 256).toString(16).slice(1));
+function 字化(陣) { return (轉十[陣[0]]+轉十[陣[1]]+轉十[陣[2]]+轉十[陣[3]]+"-"+轉十[陣[4]]+轉十[陣[5]]+"-"+轉十[陣[6]]+轉十[陣[7]]+"-"+轉十[陣[8]]+轉十[陣[9]]+"-"+轉十[陣[10]]+轉十[陣[11]]+轉十[陣[12]]+轉十[陣[13]]+轉十[陣[14]]+轉十[陣[15]]).toLowerCase(); }
+
+async function 解名(塊, 伺, 回) {
+	try {
+		let 頭 = 回; const 網 = 接続({ hostname: '8.8.8.8', port: 53 }), 寫 = 網.writable.getWriter();
+		await 寫.write(塊); 寫.releaseLock();
+		await 網.readable.pipeTo(new WritableStream({
+			async write(段) { if (頭) { 伺.send(await new Blob([頭, 段]).arrayBuffer()); 頭 = null; } else 伺.send(段); }
+		}));
+	} catch (錯) {}
+}
+
+async function 取配(識, 機) {
+    let 結 = [`${変換}${変換貳}${標識}${識}@${機}:443?encryption=none&security=tls&sni=${機}&fp=randomized&type=ws&host=${機}&path=%2F%3Fed%3D2048#${encodeURIComponent(機)}`];
+    if (優選址) {
+        for (const 源 of 優選址.split(',').map(s => s.trim()).filter(Boolean)) {
+            if (/^https?:\/\//i.test(源)) {
+                try {
+                    const 答 = await fetch(源, { cf: { cacheTtl: 300 } });
+                    if (答.ok) for (let 行 of (await 答.text()).split('\n').map(l => l.trim()).filter(Boolean)) {
+                        let 址 = 行, 門 = 443, 註 = 機; if (址.includes('#')) [址, 註] = 址.split('#').map(s=>s.trim());
+                        const 配 = 址.match(/:(\d+)$/); if (配 && !址.startsWith('[')) { 門 = 配[1]; 址 = 址.replace(/:\d+$/, ''); }
+                        結.push(`${変換}${変換貳}${標識}${識}@${址.includes(':') && !址.startsWith('[') ? `[${址}]` : 址}:${門}?encryption=none&security=tls&sni=${機}&fp=randomized&type=ws&host=${機}&path=%2F%3Fed%3D2048#${encodeURIComponent(註)}`);
+                    }
+                } catch (錯) {}
+            } else {
+                let 址 = 源, 門 = 443; const 配 = 址.match(/:(\d+)$/); if (配 && !址.startsWith('[')) { 門 = 配[1]; 址 = 址.replace(/:\d+$/, ''); }
+                結.push(`${変換}${変換貳}${標識}${識}@${址.includes(':') && !址.startsWith('[') ? `[${址}]` : 址}:${門}?encryption=none&security=tls&sni=${機}&fp=randomized&type=ws&host=${機}&path=%2F%3Fed%3D2048#${encodeURIComponent(機 + " 優選")}`);
+            }
+        }
+    }
+    return btoa(結.join('\n'));
+}
